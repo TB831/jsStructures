@@ -6,6 +6,11 @@
 //   reverse('hello') === 'olleh'
 //   reverse('Greetings!') === '!sgniteerG'
 
-function reverse(str) {}
+function reverse(str) {
+  str = str.toLowerCase().split(''); //Split string into charArray and split by empty space
+  str = str.reverse(); //Reverse the charArray
+  str = str.join([seperator = '']); //Join elements with no spaces
+  return str;
+}
 
 module.exports = reverse;
