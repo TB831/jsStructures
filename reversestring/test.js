@@ -1,4 +1,4 @@
-const reverse = require('./index');
+const reverse = require('./index1');
 
 test('Reverse function exists', () => {
   expect(reverse).toBeDefined();
