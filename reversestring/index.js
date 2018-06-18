@@ -24,8 +24,8 @@ module.exports = reverse;
 // }
 
 // Solution #3
-function reverse(str) {
-  return str
-          .split('')  // Split string into charArray and split by empty space
-          .reduce((rev, char) => char + rev , ''); // Array helper Reduce. Iterate through each char and add to it Rev.
-}
+// function reverse(str) {
+//   return str
+//           .split('')  // Split string into charArray and split by empty space
+//           .reduce((rev, char) => char + rev , ''); // Array helper Reduce. Iterate through each char and add to it Rev.
+// }
