@@ -7,6 +7,16 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {}
+function palindrome(str) {
+  const reversed = str.split('').reverse().join('');
+  return str === reversed
+}
+
+// Solution #2
+// function palindrome(str) {
+//   return str.split('').every((char, i) => { // Doing a double comparison. comparing first element to the last until it reaches the middle.
+//     return char === str[str.length - i - 1]; // Keeps returning true until false
+//   });
+// }
 
 module.exports = palindrome;
