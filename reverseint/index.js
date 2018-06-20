@@ -9,8 +9,8 @@
 //   reverseInt(-90) === -9
 
 function reverseInt(n) {
-  const reversed = n.toString().split('').reverse().join('');
-  return parseInt(reversed) * Math.sign(n);
+  const reversed = n.toString().split('').reverse().join(''); // Convert toString/ Split into charArray/ Reverse array/ Join back together
+  return parseInt(reversed) * Math.sign(n); // Convert to Int times by either 1 or -1
 }
 
 console.log(reverseInt(-513));
