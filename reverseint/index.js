@@ -13,6 +13,4 @@ function reverseInt(n) {
   return parseInt(reversed) * Math.sign(n); // Convert to Int times by either 1 or -1
 }
 
-console.log(reverseInt(-513));
-
 module.exports = reverseInt;
