@@ -21,3 +21,6 @@ cleanString = (str) => {
     .sort() // Sort charArray
     .join('') // Join together in a string
 }
+
+
+module.exports = anagrams;
