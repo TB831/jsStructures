@@ -28,9 +28,7 @@
 
 // Solution #3 Recursive w/ Memoize to dramatically to store fib function call results
 function memoize(fn) {  // Accepts function as parameter
-  const cache = {
-
-  };
+  const cache = {}; // Empty cache object
   return function(...args) {  // ...Args takes in all args and stores as an array
     if (cache[args]) {
       return cache[args];
