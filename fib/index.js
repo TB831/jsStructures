@@ -44,7 +44,7 @@ function slowFib(n) {
   if (n < 2) {
     return n; // Base case
   }
-  return slowFib(n - 1) + slowFib(n - 2);
+  return fib(n - 1) + fib(n - 2);
 }
 
 const fib = memoize(slowFib);
