@@ -49,28 +49,65 @@ class LinkedList {
     this.head = null; // Set head to null to empty out list
   }
 
-  removeFirst() { // Points to the next element in the list
+  removeFirst() { // Points to the next node in the list
     if (!this.head) { // If there is no node, return
       return;
     }
     this.head = this.head.next; // Reassign head to the next element
   }
 
-  removeLast() {  // Removes last element in the list
+  removeLast() {  // Removes last node in the list
     if (!this.head) { // If list is empty, return
       return;
     }
-    if (!this.head.next) {  // If we have a length of 1, remove the first element
+    if (!this.head.next) {  // If we have a length of 1, remove the first node
       this.head = null;
       return
     }
     let previous = this.head; // Refer to head node
     let node = this.head.next;  // Refer to the second node
-    while (node.next) { // If a node exist, once you there a null node, update previous.next to null, to delete the last node
+    while (node.next) { // While a the next node exist, once you reach a ull node, update previous to current node and advance node
       previous = node;
-      node = node.next;
+      node = node.next; // Continue through next node
     }
-    previous.next = null;
+    previous.next = null; // Once node.next reaches null, update previous.next to null to delete the last node
+  }
+
+  insertLast(data) {  // Inserts node at the end of the linked list
+    const lastNode = this.getLast();  // Get the last node of the list
+    if (lastNode) { // If last node exist
+      lastNode.next = new Node(data); // Insert new node at the end
+    } else {  // List is empty
+      this.head = new Node(data); // Insert node at the head of the list
+    }
+  }
+
+  getAt(index) {  // Returns a node at given index
+    let counter = 0;
+    let node = this.head;
+    while (node) {  // If a node exist
+      if (counter === index) {  // If counter is equal to index
+        return node;  // Return the desired node
+      }
+      counter++;  // Increment
+      node = node.next; // Continue through next node
+    }
+    return null;  // If given index is > than the list return null
+  }
+
+  removeAt(index) { // Remove a node at given index
+    if (!this.head) { // If list is empty, return
+      return;
+    }
+    if (index === 0) {  // If given index is 0 or list has only 1 node,
+      this.head = this.head.next; // Points head to null
+      return;
+    }
+    const previousNode = this.getAt(index-1);  // Gets the previous node, before desired node
+    if (!previousNode || !previousNode.next) {
+      return;
+    }
+    previousNode.next = previousNode.next.next; // Leep frogs to get desired node
   }
 }
 
