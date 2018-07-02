@@ -109,6 +109,30 @@ class LinkedList {
     }
     previousNode.next = previousNode.next.next; // Leep frogs to get desired node
   }
+
+  insertAt(data, index) {  // Inserts a new node at given index
+    if (!this.head) { // If list is empty
+      this.head = new Node(data); // create new node at the head
+      return;
+    }
+    if (index === 0) {  // If index is 0
+      this.head = new Node(data, this.head) // Create a new node, and update head to be the new node
+      return;
+    }
+    const previousNode = this.getAt(index-1) || this.getLast(); // Gets the previous node, before desired node or get last node;
+    const node = new Node(data, previousNode.next) // Create a new node, with index pointed ahead of desired index
+    previousNode.next = node; // Update previous node to point to new node
+  }
+
+  forEach(fn) { // forEach function that allows modification of each node data
+    let node = this.head;
+    let counter = 0;
+    while (node) {  // If a node exist
+      fn(node, counter);
+      node = node.next; // Continue through the nodes
+      counter++;  // Increment counter
+    }
+  }
 }
 
 module.exports = { Node, LinkedList };
