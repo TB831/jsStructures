@@ -10,7 +10,13 @@ class Node {
 }
 
 class LinkedList {
+  constructor() {
+    this.head = null; // Represents the head node of a linked list
+  }
 
+  insertFirst(data) { // Adds a new node to the linked list
+    this.head = new Node(data, this.head) //  Points head to newely added node
+  }
 }
 
 module.exports = { Node, LinkedList };
