@@ -10,8 +10,25 @@
 // on the tree class.  Each method should accept a
 // function that gets called with each element in the tree
 
-class Node {}
+class Node {
+  constructor(data) {
+    this.data = data; // Data for the node
+    this.children = []; // Array that holds the children to that node
+  }
 
-class Tree {}
+  add(data) {
+    this.children.push(new Node(data)); // Create a new node and push it into children array
+  }
+
+  remove(data) {
+    this.children = this.children.filter(node => {  // Filter to loop through each node
+      return node.data !== data;  // With filter return true if you want to keep, return false if you want to remove
+    });
+  }
+}
+
+class Tree {
+
+}
 
 module.exports = { Tree, Node };
