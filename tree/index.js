@@ -28,7 +28,21 @@ class Node {
 }
 
 class Tree {
+  constructor() {
+    this.root = null;
+  }
 
+  traverseBF(fn) {
+    const arr = [this.root]; // Create a new array, with the root node as first element
+    while (arr.length) {  // While array has an element
+      const node = arr.shift(); // Removes the first element of the array
+      node.children.map(child => {  // Loop over each children
+        arr.push(child);  // Push into arr
+      })
+      fn(node);
+    }
+    return arr;
+  }
 }
 
 module.exports = { Tree, Node };
