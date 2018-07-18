@@ -18,7 +18,17 @@ class Node {
     this.right = null;
   }
 
-  
+  insert(data) {
+    if (data < this.data && this.left) {  // If incoming data is < this.data and if a left node is present
+      this.left.insert(data); // Recurse and insert a node at that location
+    } else if (data < this.data) {  // If data < this.data
+      this.left = new Node(data); // Create a new node below the left most node
+    } else if (data > this.data && this.right) {  // If incoming data is > this.data and if a right node is present
+      this.right.insert(data);  // Recurse and insert node at that location
+    } else if (data > this.data) {  // // If data > this.data
+      this.right = new Node(data);  // Create a new node below the right most node
+    }
+  }
 }
 
 module.exports = Node;
