@@ -32,7 +32,14 @@ function selectionSort(arr) {
 }
 
 function mergeSort(arr) {
+  if (arr.length === 1) {
+    return arr;
+  }
+  const centerIndex = Math.floor(arr.length / 2); // Get the midpoint of arr
+  const left = arr.slice(0, centerIndex);  // Slice the array from 0 to center, excludes center index
+  const right = arr.slice(centerIndex);  // Slice array from center to end of arr
 
+  return merge(mergeSort(left), mergeSort(right));  // Recurse till left & right array is length. Then call merge function to merge elements into one array
 }
 
 function merge(left, right) {
