@@ -5,7 +5,7 @@
 // Given Arr = [1,2,3], return 4.
 // Given Arr = [-1,-2], return 1.
 
-smallestPostive = (arr) => {
+smallestPostiveNum = (arr) => {
   arr.sort();
   let counter = 0;
   let num = 0;
